@@ -1,0 +1,31 @@
+timestamp=[2025-03-25 06:44:02], mode=WORKBENCH_START, duration=0:00:05.863, duration_ms=5863, data={}
+timestamp=[2025-03-25 06:44:03], mode=WORKBENCH_UI_INIT, duration=0:00:00.420, duration_ms=420, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2025-03-25 06:44:03], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.055, duration_ms=55, data={}
+timestamp=[2025-03-25 06:46:16], mode=APP_CREATION, duration=0:00:19.649, duration_ms=19649, data={name=DTMF_generator_app, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=AudioProcessing2, application_type=application}
+timestamp=[2025-03-25 06:49:33], mode=PLATFORM_GENERATION, duration=0:00:18.339, duration_ms=18339, data={name=AudioProcessing2}
+timestamp=[2025-03-25 06:56:14], mode=BUILD, duration=0:00:01.286, duration_ms=1286, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 11:18:34], mode=BUILD, duration=0:00:00.591, duration_ms=591, data={name=DTMF_generator_app, configuration=Debug, clean_build=true}
+timestamp=[2025-03-25 11:18:42], mode=BUILD, duration=0:00:07.629, duration_ms=7629, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 11:20:26], mode=BUILD, duration=0:00:20.745, duration_ms=20745, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 11:21:57], mode=BUILD, duration=0:00:00.318, duration_ms=318, data={name=DTMF_generator_app, configuration=Debug, clean_build=true}
+timestamp=[2025-03-25 11:22:21], mode=BUILD, duration=0:00:23.879, duration_ms=23879, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 11:25:40], mode=BUILD, duration=0:00:00.330, duration_ms=330, data={name=DTMF_generator_app, configuration=Debug, clean_build=true}
+timestamp=[2025-03-25 11:25:49], mode=BUILD, duration=0:00:08.434, duration_ms=8434, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 11:26:51], mode=BUILD, duration=0:00:00.273, duration_ms=273, data={name=DTMF_generator_app, configuration=Debug, clean_build=true}
+timestamp=[2025-03-25 11:27:51], mode=BUILD, duration=0:00:59.475, duration_ms=59475, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 11:38:38], mode=BUILD, duration=0:00:09.679, duration_ms=9679, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 12:37:02], mode=BUILD, duration=0:00:08.046, duration_ms=8046, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 12:39:23], mode=BUILD, duration=0:00:07.936, duration_ms=7936, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 12:40:09], mode=BUILD, duration=0:00:09.392, duration_ms=9392, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 12:40:55], mode=BUILD, duration=0:00:09.144, duration_ms=9144, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 13:43:29], mode=BUILD, duration=0:00:22.123, duration_ms=22123, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 13:58:28], mode=BUILD, duration=0:00:10.642, duration_ms=10642, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 14:02:34], mode=BUILD, duration=0:00:10.104, duration_ms=10104, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 14:09:48], mode=BUILD, duration=0:00:10.279, duration_ms=10279, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 19:47:39], mode=BUILD, duration=0:00:08.629, duration_ms=8629, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 19:49:29], mode=BUILD, duration=0:00:08.672, duration_ms=8672, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 19:51:10], mode=BUILD, duration=0:00:08.456, duration_ms=8456, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 19:53:06], mode=BUILD, duration=0:00:08.915, duration_ms=8915, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 19:54:58], mode=BUILD, duration=0:00:10.087, duration_ms=10087, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 19:56:52], mode=BUILD, duration=0:00:10.013, duration_ms=10013, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}
+timestamp=[2025-03-25 20:09:14], mode=BUILD, duration=0:00:09.857, duration_ms=9857, data={name=DTMF_generator_app, configuration=Debug, clean_build=false}

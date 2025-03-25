@@ -1,0 +1,197 @@
+/******************************************************************************
+* Copyright (C) 2023 Advanced Micro Devices, Inc. All Rights Reserved.
+* SPDX-License-Identifier: MIT
+******************************************************************************/
+/*
+ * helloworld.c: simple test application
+ *
+ * This application configures UART 16550 to baud rate 9600.
+ * PS7 UART (Zynq) is not initialized by this application, since
+ * bootrom/bsp configures it to baud rate 115200
+ *
+ * ------------------------------------------------
+ * | UART TYPE   BAUD RATE                        |
+ * ------------------------------------------------
+ *   uartns550   9600
+ *   uartlite    Configurable only in HW design
+ *   ps7_uart    115200 (configured by bootrom/bsp)
+ */
+
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "audio.h"
+#include "arm_math.h"
+#include "xscutimer.h"
+#include "xscugic.h"
+
+
+#define TIMER_DEVICE_ID     	XPAR_XSCUTIMER_0_DEVICE_ID
+#define INTC_DEVICE_ID			XPAR_SCUGIC_SINGLE_DEVICE_ID
+#define TIMER_IRPT_INTR     	XPAR_SCUTIMER_INTR
+
+#define SAMPLE_RATE				48000
+#define BUFFER_SIZE				256
+
+#define TONE_DURATION            48000  // 1 second per digit
+#define PAUSE_DURATION           24000  // 0.5 second pause
+
+
+const float32_t dtmfFreqLow[4] = {697.0f, 770.0f, 852.0f, 941.0f};
+const float32_t dtmfFreqHigh[4] = {1209.0f, 1336.0f, 1477.0f, 1633.0f};
+const char dtmfKeys[4][4] = {{'1', '2', '3', 'A'},
+                             {'4', '5', '6', 'B'},
+                             {'7', '8', '9', 'C'},
+                             {'*', '0', '#', 'D'}};
+
+typedef enum {
+	IDLE,
+	PLAY_TONE,
+	PAUSE,
+	REPEAT_PAUSE
+} DTMF_STATE;
+static DTMF_State dtmf_state = IDLE;
+
+const char dtmfSequence[] = "123456789";
+volatile int sequenceIndex = 0;
+float32_t dtmfBuffer[BUFFER_SIZE];
+static float32_t thetaLow = 0.0f, thetaHigh = 0.0f;
+
+void Generate_DTMF(char key, float32_t *output, uint32_t length) {
+    int row = -1, col = -1;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (dtmfKeys[i][j] == key) {
+                row = i;
+                col = j;
+                break;
+            }
+        }
+    }
+    if (row == -1 || col == -1) return;
+
+    float32_t lowFreq = dtmfFreqLow[row];
+    float32_t highFreq = dtmfFreqHigh[col];
+    float32_t thetaIncrLow = 2 * PI * lowFreq / SAMPLE_RATE;
+    float32_t thetaIncrHigh = 2 * PI * highFreq / SAMPLE_RATE;
+
+    for (uint32_t i = 0; i < length; i++) {
+        thetaLow += thetaIncrLow;
+        if (thetaLow > 2 * PI) thetaLow -= 2 * PI;
+        thetaHigh += thetaIncrHigh;
+        if (thetaHigh > 2 * PI) thetaHigh -= 2 * PI;
+
+        output[i] = arm_sin_f32(thetaLow) + arm_sin_f32(thetaHigh);
+    }
+}
+
+static void Timer_ISR( void *CallBackRef){
+	XScuTimer *TimerInstancePtr = (XScuTimer *) CallBackRef;
+	static uint32_t toneTimer = 0, pauseTimer = 0, repeatTimer = 0;
+
+	switch (dtmf_state){
+	case PLAY_TONE: {
+        Generate_DTMF(dtmfSequence[sequenceIndex], dtmfBuffer, BUFFER_SIZE);
+        for (uint32_t i = 0; i < BUFFER_SIZE; i++) {
+            int32_t scaled_value = (int32_t)(dtmfBuffer[i] * 2147483647.0f);
+            Xil_Out32(I2S_DATA_TX_L_REG, scaled_value);
+            Xil_Out32(I2S_DATA_TX_R_REG, scaled_value);
+        }
+        tone_timer--;
+        if (toneTimer <= 0) {
+            dtmf_state = PAUSE;
+            pauseTimer = PAUSE_DURATION;
+        }
+        break;
+	} case PAUSE: {
+		Xil_Out32(I2S_DATA_TX_L_REG, 0x800000);
+		            Xil_Out32(I2S_DATA_TX_R_REG, 0x800000);
+		            pause_timer--;
+		            if (pause_timer <= 0) {
+		                sequenceIndex++;
+		                if (sequenceIndex >= sizeof(dtmfSequence) - 1) {
+		                    sequenceIndex = 0;
+		                    dtmf_state = REPEAT_PAUSE_STATE;
+		                    repeatTimer = REPEAT_PAUSE;
+		                } else {
+		                    dtmf_state = PLAY_TONE;
+		                    tone_timer = TONE_DURATION;
+		                }
+		            }
+		            break;
+	}  case REPEAT_PAUSE_STATE:
+        Xil_Out32(I2S_DATA_TX_L_REG, 0x800000);
+        Xil_Out32(I2S_DATA_TX_R_REG, 0x800000);
+        repeat_timer--;
+        if (repeat_timer <= 0) {
+            dtmf_state = PLAY_TONE;
+            toneTimer = TONE_DURATION;
+        }
+        break;
+	} case IDLE:
+    default:
+        dtmf_state = PLAY_TONE;
+        toneTimer = TONE_DURATION;
+        break;
+}
+
+
+
+}
+
+static int Timer_Intr_Setup(XScuGic * IntcInstancePtr, XScuTimer *TimerInstancePtr, u16 TimerIntrId) {
+    int Status;
+    XScuGic_Config *IntcConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+    if (!IntcConfig) {
+        xil_printf("Failed to find GIC config\n");
+        return XST_FAILURE;
+    }
+    Status = XScuGic_CfgInitialize(IntcInstancePtr, IntcConfig, IntcConfig->CpuBaseAddress);
+    if (Status != XST_SUCCESS) {
+        xil_printf("GIC Initialization Failed\n");
+        return Status;
+    }
+    Xil_ExceptionInit();
+    Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_IRQ_INT, (Xil_ExceptionHandler)XScuGic_InterruptHandler, IntcInstancePtr);
+    Status = XScuGic_Connect(IntcInstancePtr, TimerIntrId, (Xil_ExceptionHandler)Timer_ISR, (void *)TimerInstancePtr);
+    if (Status != XST_SUCCESS) {
+        xil_printf("Failed to connect ISR\n");
+        return Status;
+    }
+    XScuGic_Enable(IntcInstancePtr, TimerIntrId);
+    XScuTimer_EnableInterrupt(TimerInstancePtr);
+    Xil_ExceptionEnable();
+    return XST_SUCCESS;
+}
+
+int main()
+{
+	  int Status;
+	  init_platform();
+
+
+	  IicConfig(XPAR_XIICPS_0_DEVICE_ID);
+	  AudioPllConfig();
+	  AudioConfigureJacks();
+	  LineinLineoutConfig();
+
+	  XScuTimer Scu_Timer;
+	  XScuTimer_Config *Scu_ConfigPtr;
+	  XScuGic IntcInstance;
+
+	  Scu_ConfigPtr = XScuTimer_LookupConfig(XPAR_PS7_SCUTIMER_0_DEVICE_ID);
+	  Status = XScuTimer_CfgInitialize(&Scu_Timer, Scu_ConfigPtr, Scu_ConfigPtr->BaseAddr);
+	  Status = Timer_Intr_Setup(&IntcInstance, &Scu_Timer, XPS_SCU_TMR_INT_ID);
+	  XScuTimer_LoadTimer(&Scu_Timer,(XPAR_PS7_CORTEXA9_0_CPU_CLK_FREQ_HZ / 2)/(SAMPLE_RATE));
+	  XScuTimer_EnableAutoReload(&Scu_Timer);
+	  XScuTimer_Start(&Scu_Timer);
+
+	  dtmf_state = PLAY_TONE;
+	 toneTimer = TONE_DURATION;
+    for (;;){
+    	// infinite loop keeps the program running
+    }
+
+    cleanup_platform();
+    return 0;
+}
