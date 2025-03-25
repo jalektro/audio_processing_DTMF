@@ -49,7 +49,7 @@ typedef enum {
 } DTMF_STATE;
 static DTMF_STATE dtmf_state = IDLE;
 
-const char dtmfSequence[] = "123456789";
+const char dtmfSequence[] = "0123456789ABCD*#";
 volatile int sequenceIndex = 0;
 volatile uint32_t toneTimer = 0, pauseTimer = 0, repeatTimer = 0;
 float32_t dtmfBuffer[BUFFER_SIZE];

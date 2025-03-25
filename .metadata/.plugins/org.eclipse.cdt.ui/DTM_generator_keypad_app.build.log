@@ -1,0 +1,41 @@
+21:34:25 **** Incremental Build of configuration Debug for project DTM_generator_keypad_app ****
+make -j12 all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/bspinclude/include -I"C:\DevWorks\AudioProcessing\DTMF_generator\DTM_generator_keypad_app\src\ComputeLibrary" -I"C:\DevWorks\AudioProcessing\DTMF_generator\DTM_generator_keypad_app\src\Include" -I"C:\DevWorks\AudioProcessing\DTMF_generator\DTM_generator_keypad_app\src\PrivateInclude" -I"C:\DevWorks\AudioProcessing\DTMF_generator\DTM_generator_keypad_app\src\ComputeLibrary\Include" -I"C:\DevWorks\AudioProcessing\DTMF_generator\DTM_generator_keypad_app\src\Include\dsp" -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=neon-vfpv4 -mfloat-abi=hard -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:151:19: warning: unused variable 'IntcInstance' [-Wunused-variable]
+  151 |           XScuGic IntcInstance;
+      |                   ^~~~~~~~~~~~
+../src/helloworld.c:150:29: warning: unused variable 'Scu_ConfigPtr' [-Wunused-variable]
+  150 |           XScuTimer_Config *Scu_ConfigPtr;
+      |                             ^~~~~~~~~~~~~
+../src/helloworld.c:149:21: warning: unused variable 'Scu_Timer' [-Wunused-variable]
+  149 |           XScuTimer Scu_Timer;
+      |                     ^~~~~~~~~
+../src/helloworld.c:139:15: warning: unused variable 'Status' [-Wunused-variable]
+  139 |           int Status;
+      |               ^~~~~~
+../src/helloworld.c: At top level:
+../src/helloworld.c:59:19: warning: 'dtmf_state' defined but not used [-Wunused-variable]
+   59 | static DTMF_STATE dtmf_state = IDLE;
+      |                   ^~~~~~~~~~
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: DTM_generator_keypad_app.elf'
+'Invoking: ARM v7 gcc linker'
+'Finished building target: DTM_generator_keypad_app.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size DTM_generator_keypad_app.elf  |tee "DTM_generator_keypad_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+1363397	   1176	  23760	1388333	 152f2d	DTM_generator_keypad_app.elf
+'Finished building: DTM_generator_keypad_app.elf.size'
+' '
+
+21:34:34 Build Finished (took 9s.548ms)
+

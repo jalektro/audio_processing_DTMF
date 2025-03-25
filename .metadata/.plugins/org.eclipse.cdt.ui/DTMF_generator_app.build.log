@@ -1,4 +1,4 @@
-20:09:04 **** Incremental Build of configuration Debug for project DTMF_generator_app ****
+21:39:56 **** Incremental Build of configuration Debug for project DTMF_generator_app ****
 make -j12 all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -8,8 +8,8 @@ make --no-print-directory main-build
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/sw/AudioProcessing2/standalone_ps7_cortexa9_0/bspinclude/include -I"C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app\src\Include" -I"C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app\src\ComputeLibrary" -I"C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app\src\PrivateInclude" -I"C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app\src\Include\dsp" -I"C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app\src\ComputeLibrary\Include" -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=neon-vfpv4 -mfloat-abi=hard -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 ../src/helloworld.c: In function 'main':
-../src/helloworld.c:165:15: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
-  165 |           int Status;
+../src/helloworld.c:157:15: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+  157 |           int Status;
       |               ^~~~~~
 'Finished building: ../src/helloworld.c'
 ' '
@@ -20,9 +20,9 @@ arm-none-eabi-gcc -DDISABLEFLOAT16 -DARM_MATH_NEON -Wall -O0 -g3 -IC:/DevWorks/A
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size DTMF_generator_app.elf  |tee "DTMF_generator_app.elf.size"
    text	   data	    bss	    dec	    hex	filename
-1566684	  10144	  23712	1600540	 186c1c	DTMF_generator_app.elf
+1566692	  10144	  23712	1600548	 186c24	DTMF_generator_app.elf
 'Finished building: DTMF_generator_app.elf.size'
 ' '
 
-20:09:14 Build Finished (took 9s.738ms)
+21:40:06 Build Finished (took 9s.761ms)
 

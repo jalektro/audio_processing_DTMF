@@ -1,0 +1,1048 @@
+06:44:01 DEBUG : Logs will be stored at 'C:/DevWorks/AudioProcessing/DTMF_generator/IDE.log'.
+06:44:03 INFO  : Registering command handlers for Vitis TCF services
+06:44:03 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\DevWorks\AudioProcessing\DTMF_generator\temp_xsdb_launch_script.tcl
+06:44:03 INFO  : Platform repository initialization has completed.
+06:44:04 ERROR : (XSDB Server)'\gnu\microblaze\lin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+06:44:04 ERROR : (XSDB Server)'\gnu\microblaze\nt\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+06:44:04 ERROR : (XSDB Server)'\gnuwin\bin\' is not recognized as an internal or external command,
+operable program or batch file.
+
+06:44:07 INFO  : XSCT server has started successfully.
+06:44:12 INFO  : Successfully done setting XSCT server connection channel  
+06:44:12 INFO  : plnx-install-location is set to ''
+06:44:12 INFO  : Successfully done query RDI_DATADIR 
+06:44:12 INFO  : Successfully done setting workspace for the tool. 
+06:46:07 INFO  : Result from executing command 'getProjects': AudioProcessing2
+06:46:08 INFO  : Result from executing command 'getPlatforms': 
+06:46:08 WARN  : An unexpected exception occurred in the module 'platform project logging'
+06:46:08 INFO  : Platform 'AudioProcessing2' is added to custom repositories.
+06:46:16 INFO  : Platform 'AudioProcessing2' is added to custom repositories.
+06:49:33 INFO  : Result from executing command 'getProjects': AudioProcessing2
+06:49:33 INFO  : Result from executing command 'getPlatforms': AudioProcessing2|C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/AudioProcessing2.xpfm
+06:56:13 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+11:18:34 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+11:20:05 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+11:21:57 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+11:25:40 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+11:26:51 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+11:38:27 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+11:38:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:38:51 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+11:38:51 INFO  : 'jtag frequency' command is executed.
+11:38:51 INFO  : Context for 'APU' is selected.
+11:38:51 INFO  : System reset is completed.
+11:38:54 INFO  : 'after 3000' command is executed.
+11:38:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+11:38:57 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+11:38:57 INFO  : Context for 'APU' is selected.
+11:38:57 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+11:38:57 INFO  : 'configparams force-mem-access 1' command is executed.
+11:38:57 INFO  : Context for 'APU' is selected.
+11:38:57 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+11:38:57 INFO  : 'ps7_init' command is executed.
+11:38:57 INFO  : 'ps7_post_config' command is executed.
+11:38:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:39:00 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:39:00 INFO  : 'configparams force-mem-access 0' command is executed.
+11:39:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:39:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:39:01 INFO  : 'con' command is executed.
+11:39:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:39:01 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+11:41:20 INFO  : Disconnected from the channel tcfchan#2.
+11:41:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:41:24 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+11:41:24 INFO  : 'jtag frequency' command is executed.
+11:41:24 INFO  : Context for 'APU' is selected.
+11:41:24 INFO  : System reset is completed.
+11:41:27 INFO  : 'after 3000' command is executed.
+11:41:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+11:41:29 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+11:41:29 INFO  : Context for 'APU' is selected.
+11:41:29 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+11:41:29 INFO  : 'configparams force-mem-access 1' command is executed.
+11:41:29 INFO  : Context for 'APU' is selected.
+11:41:29 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+11:41:29 INFO  : 'ps7_init' command is executed.
+11:41:29 INFO  : 'ps7_post_config' command is executed.
+11:41:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:41:32 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:41:33 INFO  : 'configparams force-mem-access 0' command is executed.
+11:41:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:41:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:41:33 INFO  : 'con' command is executed.
+11:41:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:41:33 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+11:44:53 INFO  : Disconnected from the channel tcfchan#3.
+11:45:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:45:21 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+11:45:21 INFO  : 'jtag frequency' command is executed.
+11:45:21 INFO  : Context for 'APU' is selected.
+11:45:21 INFO  : System reset is completed.
+11:45:24 INFO  : 'after 3000' command is executed.
+11:45:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+11:45:27 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+11:45:27 INFO  : Context for 'APU' is selected.
+11:45:27 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+11:45:27 INFO  : 'configparams force-mem-access 1' command is executed.
+11:45:27 INFO  : Context for 'APU' is selected.
+11:45:27 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+11:45:27 INFO  : 'ps7_init' command is executed.
+11:45:27 INFO  : 'ps7_post_config' command is executed.
+11:45:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:30 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:45:30 INFO  : 'configparams force-mem-access 0' command is executed.
+11:45:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:45:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:30 INFO  : 'con' command is executed.
+11:45:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:45:30 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+11:47:12 INFO  : Disconnected from the channel tcfchan#4.
+11:47:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:47:15 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+11:47:15 INFO  : 'jtag frequency' command is executed.
+11:47:15 INFO  : Context for 'APU' is selected.
+11:47:15 INFO  : System reset is completed.
+11:47:18 INFO  : 'after 3000' command is executed.
+11:47:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+11:47:20 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+11:47:20 INFO  : Context for 'APU' is selected.
+11:47:20 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+11:47:20 INFO  : 'configparams force-mem-access 1' command is executed.
+11:47:20 INFO  : Context for 'APU' is selected.
+11:47:20 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+11:47:21 INFO  : 'ps7_init' command is executed.
+11:47:21 INFO  : 'ps7_post_config' command is executed.
+11:47:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:47:24 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:47:24 INFO  : 'configparams force-mem-access 0' command is executed.
+11:47:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:47:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:47:24 INFO  : 'con' command is executed.
+11:47:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:47:24 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+12:01:32 INFO  : Disconnected from the channel tcfchan#5.
+12:36:54 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+12:39:15 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+12:39:59 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+12:40:45 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+12:41:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:41:11 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+12:41:11 INFO  : 'jtag frequency' command is executed.
+12:41:11 INFO  : Context for 'APU' is selected.
+12:41:11 INFO  : System reset is completed.
+12:41:14 INFO  : 'after 3000' command is executed.
+12:41:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+12:41:17 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+12:41:17 INFO  : Context for 'APU' is selected.
+12:41:17 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+12:41:17 INFO  : 'configparams force-mem-access 1' command is executed.
+12:41:17 INFO  : Context for 'APU' is selected.
+12:41:17 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+12:41:17 INFO  : 'ps7_init' command is executed.
+12:41:17 INFO  : 'ps7_post_config' command is executed.
+12:41:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:41:20 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:41:20 INFO  : 'configparams force-mem-access 0' command is executed.
+12:41:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:41:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:41:20 INFO  : 'con' command is executed.
+12:41:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:41:20 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+12:42:59 INFO  : Disconnected from the channel tcfchan#6.
+12:43:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:43:04 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+12:43:04 INFO  : 'jtag frequency' command is executed.
+12:43:04 INFO  : Context for 'APU' is selected.
+12:43:04 INFO  : System reset is completed.
+12:43:07 INFO  : 'after 3000' command is executed.
+12:43:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+12:43:09 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+12:43:09 INFO  : Context for 'APU' is selected.
+12:43:09 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+12:43:09 INFO  : 'configparams force-mem-access 1' command is executed.
+12:43:09 INFO  : Context for 'APU' is selected.
+12:43:09 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+12:43:09 INFO  : 'ps7_init' command is executed.
+12:43:09 INFO  : 'ps7_post_config' command is executed.
+12:43:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:43:13 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:43:13 INFO  : 'configparams force-mem-access 0' command is executed.
+12:43:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:43:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:43:13 INFO  : 'con' command is executed.
+12:43:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:43:13 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+12:49:00 INFO  : Disconnected from the channel tcfchan#7.
+13:43:06 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+13:43:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:43:33 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+13:43:33 INFO  : 'jtag frequency' command is executed.
+13:43:33 INFO  : Context for 'APU' is selected.
+13:43:33 INFO  : System reset is completed.
+13:43:37 INFO  : 'after 3000' command is executed.
+13:43:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+13:43:39 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+13:43:39 INFO  : Context for 'APU' is selected.
+13:43:39 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+13:43:39 INFO  : 'configparams force-mem-access 1' command is executed.
+13:43:39 INFO  : Context for 'APU' is selected.
+13:43:39 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+13:43:39 INFO  : 'ps7_init' command is executed.
+13:43:39 INFO  : 'ps7_post_config' command is executed.
+13:43:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:43:43 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:43:43 INFO  : 'configparams force-mem-access 0' command is executed.
+13:43:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:43:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:43:43 INFO  : 'con' command is executed.
+13:43:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:43:43 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+13:55:28 INFO  : Disconnected from the channel tcfchan#8.
+13:55:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:55:30 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+13:55:30 INFO  : 'jtag frequency' command is executed.
+13:55:30 INFO  : Context for 'APU' is selected.
+13:55:30 INFO  : System reset is completed.
+13:55:33 INFO  : 'after 3000' command is executed.
+13:55:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+13:55:35 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+13:55:35 INFO  : Context for 'APU' is selected.
+13:55:35 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+13:55:35 INFO  : 'configparams force-mem-access 1' command is executed.
+13:55:35 INFO  : Context for 'APU' is selected.
+13:55:35 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+13:55:35 INFO  : 'ps7_init' command is executed.
+13:55:35 INFO  : 'ps7_post_config' command is executed.
+13:55:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:55:38 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:55:38 INFO  : 'configparams force-mem-access 0' command is executed.
+13:55:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:55:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:55:39 INFO  : 'con' command is executed.
+13:55:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:55:39 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+13:57:23 INFO  : Disconnected from the channel tcfchan#9.
+13:57:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:57:27 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+13:57:27 INFO  : 'jtag frequency' command is executed.
+13:57:27 INFO  : Context for 'APU' is selected.
+13:57:27 INFO  : System reset is completed.
+13:57:30 INFO  : 'after 3000' command is executed.
+13:57:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+13:57:33 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+13:57:33 INFO  : Context for 'APU' is selected.
+13:57:33 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+13:57:33 INFO  : 'configparams force-mem-access 1' command is executed.
+13:57:33 INFO  : Context for 'APU' is selected.
+13:57:33 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+13:57:33 INFO  : 'ps7_init' command is executed.
+13:57:33 INFO  : 'ps7_post_config' command is executed.
+13:57:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:57:36 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:57:36 INFO  : 'configparams force-mem-access 0' command is executed.
+13:57:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:57:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:57:36 INFO  : 'con' command is executed.
+13:57:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:57:36 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+13:57:58 INFO  : Disconnected from the channel tcfchan#10.
+13:57:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:57:59 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+13:57:59 INFO  : 'jtag frequency' command is executed.
+13:57:59 INFO  : Context for 'APU' is selected.
+13:57:59 INFO  : System reset is completed.
+13:58:02 INFO  : 'after 3000' command is executed.
+13:58:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+13:58:04 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+13:58:04 INFO  : Context for 'APU' is selected.
+13:58:04 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+13:58:04 INFO  : 'configparams force-mem-access 1' command is executed.
+13:58:04 INFO  : Context for 'APU' is selected.
+13:58:04 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+13:58:05 INFO  : 'ps7_init' command is executed.
+13:58:05 INFO  : 'ps7_post_config' command is executed.
+13:58:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:58:08 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:58:08 INFO  : 'configparams force-mem-access 0' command is executed.
+13:58:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:58:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:58:08 INFO  : 'con' command is executed.
+13:58:08 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:58:08 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+13:58:17 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+13:58:50 INFO  : Disconnected from the channel tcfchan#11.
+13:58:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:58:52 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+13:58:52 INFO  : 'jtag frequency' command is executed.
+13:58:52 INFO  : Context for 'APU' is selected.
+13:58:52 INFO  : System reset is completed.
+13:58:55 INFO  : 'after 3000' command is executed.
+13:58:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+13:58:58 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+13:58:58 INFO  : Context for 'APU' is selected.
+13:58:58 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+13:58:58 INFO  : 'configparams force-mem-access 1' command is executed.
+13:58:58 INFO  : Context for 'APU' is selected.
+13:58:58 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+13:58:58 INFO  : 'ps7_init' command is executed.
+13:58:58 INFO  : 'ps7_post_config' command is executed.
+13:58:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:59:01 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:59:01 INFO  : 'configparams force-mem-access 0' command is executed.
+13:59:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:59:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:59:01 INFO  : 'con' command is executed.
+13:59:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:59:01 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+14:02:24 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+14:02:26 INFO  : Disconnected from the channel tcfchan#12.
+14:02:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:02:43 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+14:02:43 INFO  : 'jtag frequency' command is executed.
+14:02:43 INFO  : Context for 'APU' is selected.
+14:02:43 INFO  : System reset is completed.
+14:02:46 INFO  : 'after 3000' command is executed.
+14:02:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+14:02:49 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+14:02:49 INFO  : Context for 'APU' is selected.
+14:02:49 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+14:02:49 INFO  : 'configparams force-mem-access 1' command is executed.
+14:02:49 INFO  : Context for 'APU' is selected.
+14:02:49 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+14:02:49 INFO  : 'ps7_init' command is executed.
+14:02:49 INFO  : 'ps7_post_config' command is executed.
+14:02:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:02:52 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:02:52 INFO  : 'configparams force-mem-access 0' command is executed.
+14:02:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:02:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:02:53 INFO  : 'con' command is executed.
+14:02:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:02:53 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+14:09:37 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+14:10:08 INFO  : Disconnected from the channel tcfchan#13.
+14:10:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:10:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+14:10:18 ERROR : Could not find Jtag device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+14:10:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:10:26 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+14:10:26 INFO  : 'jtag frequency' command is executed.
+14:10:26 INFO  : Context for 'APU' is selected.
+14:10:26 INFO  : System reset is completed.
+14:10:29 INFO  : 'after 3000' command is executed.
+14:10:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+14:10:31 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+14:10:31 INFO  : Context for 'APU' is selected.
+14:10:31 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+14:10:31 INFO  : 'configparams force-mem-access 1' command is executed.
+14:10:31 INFO  : Context for 'APU' is selected.
+14:10:31 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+14:10:32 INFO  : 'ps7_init' command is executed.
+14:10:32 INFO  : 'ps7_post_config' command is executed.
+14:10:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:10:35 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:10:35 INFO  : 'configparams force-mem-access 0' command is executed.
+14:10:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:10:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:10:35 INFO  : 'con' command is executed.
+14:10:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:10:35 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+14:13:44 INFO  : Disconnected from the channel tcfchan#14.
+14:13:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:13:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+14:13:54 ERROR : Could not find Jtag device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+14:14:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:14:00 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+14:14:00 INFO  : 'jtag frequency' command is executed.
+14:14:00 INFO  : Context for 'APU' is selected.
+14:14:00 INFO  : System reset is completed.
+14:14:03 INFO  : 'after 3000' command is executed.
+14:14:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+14:14:05 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+14:14:05 INFO  : Context for 'APU' is selected.
+14:14:05 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+14:14:05 INFO  : 'configparams force-mem-access 1' command is executed.
+14:14:05 INFO  : Context for 'APU' is selected.
+14:14:05 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+14:14:05 INFO  : 'ps7_init' command is executed.
+14:14:05 INFO  : 'ps7_post_config' command is executed.
+14:14:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:09 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:14:09 INFO  : 'configparams force-mem-access 0' command is executed.
+14:14:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:14:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:14:09 INFO  : 'con' command is executed.
+14:14:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:14:09 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+14:14:31 INFO  : Disconnected from the channel tcfchan#15.
+19:47:30 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+19:49:20 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+19:51:02 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+19:52:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:52:40 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+19:52:40 INFO  : 'jtag frequency' command is executed.
+19:52:40 INFO  : Context for 'APU' is selected.
+19:52:40 INFO  : System reset is completed.
+19:52:43 INFO  : 'after 3000' command is executed.
+19:52:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+19:52:46 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+19:52:46 INFO  : Context for 'APU' is selected.
+19:52:46 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+19:52:46 INFO  : 'configparams force-mem-access 1' command is executed.
+19:52:46 INFO  : Context for 'APU' is selected.
+19:52:46 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+19:52:46 INFO  : 'ps7_init' command is executed.
+19:52:46 INFO  : 'ps7_post_config' command is executed.
+19:52:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:52:49 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:52:49 INFO  : 'configparams force-mem-access 0' command is executed.
+19:52:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:52:50 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:52:50 INFO  : 'con' command is executed.
+19:52:50 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:52:50 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+19:52:56 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+19:54:48 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+19:55:11 INFO  : Disconnected from the channel tcfchan#16.
+19:55:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:55:12 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+19:55:12 INFO  : 'jtag frequency' command is executed.
+19:55:12 INFO  : Context for 'APU' is selected.
+19:55:12 INFO  : System reset is completed.
+19:55:15 INFO  : 'after 3000' command is executed.
+19:55:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+19:55:17 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+19:55:17 INFO  : Context for 'APU' is selected.
+19:55:17 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+19:55:17 INFO  : 'configparams force-mem-access 1' command is executed.
+19:55:17 INFO  : Context for 'APU' is selected.
+19:55:17 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+19:55:17 INFO  : 'ps7_init' command is executed.
+19:55:17 INFO  : 'ps7_post_config' command is executed.
+19:55:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:55:21 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:55:21 INFO  : 'configparams force-mem-access 0' command is executed.
+19:55:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:55:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:55:21 INFO  : 'con' command is executed.
+19:55:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:55:21 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+19:56:41 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+19:57:00 INFO  : Disconnected from the channel tcfchan#17.
+19:57:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:57:03 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+19:57:03 INFO  : 'jtag frequency' command is executed.
+19:57:03 INFO  : Context for 'APU' is selected.
+19:57:04 INFO  : System reset is completed.
+19:57:07 INFO  : 'after 3000' command is executed.
+19:57:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+19:57:09 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+19:57:09 INFO  : Context for 'APU' is selected.
+19:57:09 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+19:57:09 INFO  : 'configparams force-mem-access 1' command is executed.
+19:57:09 INFO  : Context for 'APU' is selected.
+19:57:09 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+19:57:09 INFO  : 'ps7_init' command is executed.
+19:57:09 INFO  : 'ps7_post_config' command is executed.
+19:57:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:57:12 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:57:12 INFO  : 'configparams force-mem-access 0' command is executed.
+19:57:12 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:57:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:57:13 INFO  : 'con' command is executed.
+19:57:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:57:13 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+20:09:04 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+20:09:16 INFO  : Disconnected from the channel tcfchan#18.
+20:09:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:09:19 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+20:09:19 INFO  : 'jtag frequency' command is executed.
+20:09:19 INFO  : Context for 'APU' is selected.
+20:09:20 INFO  : System reset is completed.
+20:09:23 INFO  : 'after 3000' command is executed.
+20:09:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+20:09:25 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+20:09:25 INFO  : Context for 'APU' is selected.
+20:09:25 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+20:09:25 INFO  : 'configparams force-mem-access 1' command is executed.
+20:09:25 INFO  : Context for 'APU' is selected.
+20:09:25 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+20:09:25 INFO  : 'ps7_init' command is executed.
+20:09:25 INFO  : 'ps7_post_config' command is executed.
+20:09:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:09:28 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:09:28 INFO  : 'configparams force-mem-access 0' command is executed.
+20:09:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:09:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:09:28 INFO  : 'con' command is executed.
+20:09:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+20:09:28 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+20:14:30 INFO  : Projects exported to 'C:\DevWorks\AudioProcessing\dtmf_generatorzip.ide.zip'
+20:48:33 INFO  : Checking for BSP changes to sync application flags for project 'DTM_generator_keypad_app'...
+20:55:33 INFO  : Checking for BSP changes to sync application flags for project 'DTM_generator_keypad_app'...
+21:18:51 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+21:20:59 INFO  : Checking for BSP changes to sync application flags for project 'DTM_generator_keypad_app'...
+21:28:01 INFO  : Checking for BSP changes to sync application flags for project 'DTM_generator_keypad_app'...
+21:29:48 INFO  : Checking for BSP changes to sync application flags for project 'DTM_generator_keypad_app'...
+21:30:49 INFO  : Checking for BSP changes to sync application flags for project 'DTM_generator_keypad_app'...
+21:32:06 INFO  : Checking for BSP changes to sync application flags for project 'DTM_generator_keypad_app'...
+21:32:51 INFO  : Checking for BSP changes to sync application flags for project 'DTM_generator_keypad_app'...
+21:34:24 INFO  : Checking for BSP changes to sync application flags for project 'DTM_generator_keypad_app'...
+21:34:47 INFO  : Disconnected from the channel tcfchan#19.
+21:34:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:34:48 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+21:34:48 INFO  : 'jtag frequency' command is executed.
+21:34:48 INFO  : Context for 'APU' is selected.
+21:34:48 INFO  : System reset is completed.
+21:34:51 INFO  : 'after 3000' command is executed.
+21:34:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+21:34:53 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTM_generator_keypad_app/_ide/bitstream/AudioProcessing2.bit"
+21:34:53 INFO  : Context for 'APU' is selected.
+21:34:53 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+21:34:53 INFO  : 'configparams force-mem-access 1' command is executed.
+21:34:53 INFO  : Context for 'APU' is selected.
+21:34:53 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTM_generator_keypad_app/_ide/psinit/ps7_init.tcl' is done.
+21:34:53 INFO  : 'ps7_init' command is executed.
+21:34:53 INFO  : 'ps7_post_config' command is executed.
+21:34:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:34:56 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTM_generator_keypad_app/Debug/DTM_generator_keypad_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:34:56 INFO  : 'configparams force-mem-access 0' command is executed.
+21:34:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTM_generator_keypad_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTM_generator_keypad_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTM_generator_keypad_app/Debug/DTM_generator_keypad_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:34:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:34:56 INFO  : 'con' command is executed.
+21:34:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:34:56 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTM_generator_keypad_app_system\_ide\scripts\debugger_dtm_generator_keypad_app-default.tcl'
+21:36:30 INFO  : Disconnected from the channel tcfchan#20.
+21:36:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:36:56 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+21:36:56 INFO  : 'jtag frequency' command is executed.
+21:36:56 INFO  : Context for 'APU' is selected.
+21:36:56 INFO  : System reset is completed.
+21:36:59 INFO  : 'after 3000' command is executed.
+21:36:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+21:37:01 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+21:37:02 INFO  : Context for 'APU' is selected.
+21:37:02 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+21:37:02 INFO  : 'configparams force-mem-access 1' command is executed.
+21:37:02 INFO  : Context for 'APU' is selected.
+21:37:02 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+21:37:02 INFO  : 'ps7_init' command is executed.
+21:37:02 INFO  : 'ps7_post_config' command is executed.
+21:37:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:37:05 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:37:05 INFO  : 'configparams force-mem-access 0' command is executed.
+21:37:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:37:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:37:05 INFO  : 'con' command is executed.
+21:37:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:37:05 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
+21:38:13 INFO  : Disconnected from the channel tcfchan#21.
+21:39:56 INFO  : Checking for BSP changes to sync application flags for project 'DTMF_generator_app'...
+21:40:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:40:11 INFO  : Jtag cable 'Xilinx HW-FTDI-TEST FT2232H 1234-tulA' is selected.
+21:40:11 INFO  : 'jtag frequency' command is executed.
+21:40:11 INFO  : Context for 'APU' is selected.
+21:40:11 INFO  : System reset is completed.
+21:40:14 INFO  : 'after 3000' command is executed.
+21:40:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}' command is executed.
+21:40:17 INFO  : Device configured successfully with "C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit"
+21:40:17 INFO  : Context for 'APU' is selected.
+21:40:17 INFO  : Hardware design and registers information is loaded from 'C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa'.
+21:40:17 INFO  : 'configparams force-mem-access 1' command is executed.
+21:40:17 INFO  : Context for 'APU' is selected.
+21:40:17 INFO  : Sourcing of 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl' is done.
+21:40:17 INFO  : 'ps7_init' command is executed.
+21:40:17 INFO  : 'ps7_post_config' command is executed.
+21:40:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:20 INFO  : The application 'C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:40:20 INFO  : 'configparams force-mem-access 0' command is executed.
+21:40:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx HW-FTDI-TEST FT2232H 1234-tulA" && level==0 && jtag_device_ctx=="jsn-HW-FTDI-TEST FT2232H-1234-tulA-23727093-0"}
+fpga -file C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/bitstream/AudioProcessing2.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/DevWorks/AudioProcessing/DTMF_generator/AudioProcessing2/export/AudioProcessing2/hw/AudioProcessing2.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/DevWorks/AudioProcessing/DTMF_generator/DTMF_generator_app/Debug/DTMF_generator_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+21:40:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:40:20 INFO  : 'con' command is executed.
+21:40:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+21:40:20 INFO  : Launch script is exported to file 'C:\DevWorks\AudioProcessing\DTMF_generator\DTMF_generator_app_system\_ide\scripts\debugger_dtmf_generator_app-default.tcl'
